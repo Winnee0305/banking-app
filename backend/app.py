@@ -5,8 +5,24 @@ import pandas as pd
 import numpy as np
 import os
 from typing import List, Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Bank Marketing Classifier API", version="1.0.0")
+
+# Add CORS middleware to allow requests from frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://192.168.0.123:3000",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load the trained model
 MODEL_PATH = "models/bank_marketing_classifier.pkl"
