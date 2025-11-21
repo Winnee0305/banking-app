@@ -313,7 +313,7 @@ uv run uvicorn app:app --reload --port 8001
 ### Backend
 - fastapi (0.121.1) - Web framework
 - uvicorn (0.38.0) - ASGI server
-- scikit-learn (1.7.2) - ML library
+- scikit-learn (1.2.2) - ML library
 - pandas (2.1.3) - Data processing
 - numpy (≥1.23.2,<2) - Numerical computing
 - joblib (1.4.2) - Model persistence
