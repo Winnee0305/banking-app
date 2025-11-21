@@ -345,59 +345,6 @@ uv run uvicorn app:app --reload --port 8001
 
 **Interpretation**: The model is conservative—when it predicts "yes," it's correct ~47% of the time, minimizing marketing waste while maintaining strong specificity (95.8% correctly identified non-subscribers).
 
-## 📄 License
-
-MIT License - Feel free to use this project for learning and development.
-
-## 👨‍💻 Development
-
-### Regenerating the Model
-
-If you modify the ML pipeline:
-
-1. Update `backend/classifier.ipynb`
-2. Run all cells to retrain the model
-3. The last cell saves to `models/bank_marketing_classifier.pkl`
-4. Restart backend: `uv run uvicorn app:app --reload`
-
-### Adding New Features
-
-To add features to predictions:
-
-1. Update `classifier.ipynb` feature engineering
-2. Regenerate and save model
-3. Update `FormData` interface in `frontend/banking-app/app/page.tsx`
-4. Update `CustomerData` BaseModel in `backend/app.py`
-5. Update `/predict` endpoint logic
-
-## 🚀 Deployment
-
-### Deploy Backend (Example: Render, Railway, Heroku)
-
-```bash
-# Create production Dockerfile
-# Push to Git repo
-# Connect to deployment platform
-# Set NEXT_PUBLIC_API_URL to production API URL
-```
-
-### Deploy Frontend (Example: Vercel, Netlify)
-
-```bash
-# Push to Git
-# Connect to Vercel/Netlify
-# Set environment variable NEXT_PUBLIC_API_URL
-# Automatic deployment on push
-```
-
-## 📞 Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review API logs: Check browser console and backend terminal
-3. Check model logs: View `backend/classifier.ipynb` output
-4. Visit API docs: `http://localhost:8000/docs`
-
 ---
 
 **Last Updated**: November 21, 2025
